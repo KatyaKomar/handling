@@ -20,18 +20,18 @@ public class WordParser extends AbstractParser {
         for (char ch : lexeme) {
             matcher = pattern.matcher(Character.toString(ch));
             if (matcher.matches()) {
-                if (word.length()>0) {
+                if (word.length() > 0) {
                     TextComposite nextComposite = nextParser.parse(word.toString());
                     wordComposite.add(nextComposite);
                     word = new StringBuilder();
                 }
                 PunctuationLeaf leaf = new PunctuationLeaf(ch);
                 wordComposite.add(leaf);
-            } else{
+            } else {
                 word.append(ch);
             }
         }
-        if (word.length()>0) {
+        if (word.length() > 0) {
             TextComposite nextComposite = nextParser.parse(word.toString());
             wordComposite.add(nextComposite);
         }

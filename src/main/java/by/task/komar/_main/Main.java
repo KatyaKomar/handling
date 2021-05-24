@@ -3,9 +3,11 @@ package by.task.komar._main;
 import by.task.komar.entity.impl.TextComposite;
 import by.task.komar.exception.CompositeException;
 import by.task.komar.exception.TextException;
-import by.task.komar.parser.*;
 import by.task.komar.reader.TextReader;
 import by.task.komar.service.impl.TextServiceImpl;
+import by.task.komar.parser.LexemeParser;
+import by.task.komar.parser.SymbolParser;
+import by.task.komar.parser.WordParser;
 
 public class Main {
     public static void main(String[] args) {

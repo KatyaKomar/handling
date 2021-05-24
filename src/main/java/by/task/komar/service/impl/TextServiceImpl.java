@@ -32,6 +32,7 @@ public class TextServiceImpl implements TextService {
                 return o1.size() - o2.size();
             }
         });
+        logger.log(Level.INFO, "Sorted paragraphs: " + sortedParagraphs);
         return sortedParagraphs;
     }
 
@@ -67,6 +68,7 @@ public class TextServiceImpl implements TextService {
                 }
             }
         }
+        logger.log(Level.INFO, "Sentences with the longest word: " + sentencesWithWord);
         return sentencesWithWord;
     }
 
@@ -98,11 +100,12 @@ public class TextServiceImpl implements TextService {
                 }
             }
         }
+        logger.log(Level.INFO, "Text without words with length " + minLength + ": " + sentencesWithoutWord);
         return sentencesWithoutWord;
     }
 
     @Override
-    public List<String> countRepeteWords(TextComposite composite) throws CompositeException {
+    public List<String> countRepeatWords(TextComposite composite) throws CompositeException {
         if (composite == null) {
             logger.log(Level.ERROR, "Composite is null");
             throw new CompositeException("Composite is null");
@@ -137,6 +140,7 @@ public class TextServiceImpl implements TextService {
                 result.add(word.getKey());
             }
         }
+        logger.log(Level.INFO, "Words that repeat in text: " + result);
         return result;
     }
 
@@ -168,6 +172,7 @@ public class TextServiceImpl implements TextService {
                 }
             }
         }
+        logger.log(Level.INFO, "Number of vowels in sentence " + composite + ": " + counter);
         return counter;
     }
 
@@ -199,6 +204,7 @@ public class TextServiceImpl implements TextService {
                 }
             }
         }
+        logger.log(Level.INFO, "Number of consonants in sentence " + composite + ": " + counter);
         return counter;
     }
 }

@@ -13,7 +13,7 @@ public interface TextService {
 
     List<Component> deleteSentencesWithShortWord(TextComposite composite, int minLength) throws CompositeException;
 
-    List<String> countRepeteWords(TextComposite composite) throws CompositeException;
+    List<String> countRepeatWords(TextComposite composite) throws CompositeException;
 
     int countVowels(TextComposite composite) throws CompositeException;
 
