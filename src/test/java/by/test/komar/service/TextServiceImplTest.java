@@ -21,7 +21,7 @@ public class TextServiceImplTest {
         return text;
     }
 
-     TextComposite parseText(String data){
+    TextComposite parseText(String data) {
         ParagraphParser paragraphParser = new ParagraphParser();
         SentenceParser sentenceParser = new SentenceParser();
         LexemeParser lexemeParser = new LexemeParser();
@@ -135,5 +135,11 @@ public class TextServiceImplTest {
         int actualCount = textService.countConsonants(composite);
         int expectedCount = 13;
         Assert.assertEquals(expectedCount, actualCount);
+    }
+
+    @Test(expectedExceptions = CompositeException.class)
+    public void testFundException() throws CompositeException {
+        TextServiceImpl textService = new TextServiceImpl();
+        List<Component> actualSentences = textService.findSentencesWithLongWord(null);
     }
 }
